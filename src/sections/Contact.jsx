@@ -15,8 +15,8 @@ export default function Contact() {
             </div>
             <h2 className="contact-heading">Let's build something practical.</h2>
             <p className="contact-desc">
-              I'm available for junior/associate software development opportunities,
-              internal tools projects, and selected freelance work for small businesses.
+              I'm open to software development opportunities, internal tools projects,
+              and selected freelance work where my operations background can bring extra value.
             </p>
 
             <div className="contact-buttons">
@@ -41,7 +41,7 @@ export default function Contact() {
               <a href={LINKS.certificate} target="_blank" rel="noopener noreferrer"
                 className="btn btn-outline">
                 <ExternalLink size={15} />
-                View Certificate
+                View IBM Certificate
               </a>
             </div>
 

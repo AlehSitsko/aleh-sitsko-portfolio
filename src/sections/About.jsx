@@ -3,12 +3,12 @@ import { LINKS } from '../data/links';
 import './About.css';
 
 const ROLES = [
-  'Junior Software Developer',
-  'Associate Software Engineer',
-  'Full Stack Developer',
+  'Full Stack Development',
+  'Frontend & Backend Web Applications',
+  'Internal Tools & Admin Dashboards',
   'QA Automation / SDET',
-  'Internal Tools Developer',
-  'Operations Technology / Workflow Software',
+  'Workflow & Operations Software',
+  'Business Process Automation',
 ];
 
 export default function About() {
@@ -43,7 +43,7 @@ export default function About() {
                 I completed the IBM Full Stack Software Developer Professional Certificate and built
                 full-stack projects using React, JavaScript, Python, Flask, SQLAlchemy, and modern
                 deployment workflows. My goal is to bring both technical skills and real operational
-                understanding into a junior or associate software development role.
+                understanding into software development.
               </p>
             </div>
 
@@ -68,17 +68,17 @@ export default function About() {
             </div>
           </div>
 
-          {/* Open-to-roles card */}
+          {/* Open-to-opportunities card */}
           <div className="roles-card card">
             <div className="roles-available">
               <span className="roles-dot" aria-hidden="true" />
-              Open to Software Development Roles
+              Open to Software Development Opportunities
             </div>
 
             <p className="roles-desc">
-              I'm currently looking for junior or associate software development opportunities
-              where I can contribute to frontend, backend, QA automation, internal tools,
-              and workflow-focused applications.
+              I'm open to software development opportunities where I can contribute to practical
+              web applications, internal tools, workflow systems, QA automation, and
+              operations-focused software.
             </p>
 
             <div className="roles-list">

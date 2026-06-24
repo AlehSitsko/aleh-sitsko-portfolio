@@ -30,7 +30,7 @@ export default function Services() {
       <div className="container">
         <div className="label">
           <span className="label-line" aria-hidden="true" />
-          Freelance
+          Workflow Tools
         </div>
 
         <div className="services-head">
@@ -51,8 +51,8 @@ export default function Services() {
         </div>
 
         <div className="services-note">
-          In addition to software roles, I'm available for selected freelance projects where
-          my operations background can help small businesses improve workflows.
+          I also take selected freelance projects where my operations background can help
+          small businesses improve real workflows.
         </div>
       </div>
     </section>

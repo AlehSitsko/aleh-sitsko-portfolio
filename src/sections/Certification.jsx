@@ -45,7 +45,7 @@ export default function Certification() {
               aria-label="View IBM Full Stack certificate on Coursera"
             >
               <ExternalLink size={13} />
-              View Certificate
+              View IBM Certificate
             </a>
           </div>
 

@@ -3,7 +3,7 @@ export const LINKS = {
   linkedin:    'https://linkedin.com/in/alehsitsko',
   email:       'mailto:sitskoaleh@gmail.com',
   resume:      '#',   // Replace with real PDF URL
-  certificate: 'https://coursera.org/verify/professional-cert/PMUCKDP1FGIE',
+  certificate: 'https://coursera.org/share/530a3b57b1ef0f5c30c1c94845a31a96',
   domain:      'https://alehsitsko.dev',
 };
 
