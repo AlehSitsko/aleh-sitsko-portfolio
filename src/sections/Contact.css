@@ -90,13 +90,13 @@ a.contact-detail-value:hover { color: var(--accent); }
   width: 8px;
   height: 8px;
   border-radius: 50%;
-  background: #34d399;
-  flex-shrink: 0;
-  box-shadow: 0 0 6px rgba(52,211,153,0.5);
-}
-[data-theme="light"] .status-dot {
   background: #059669;
+  flex-shrink: 0;
   box-shadow: 0 0 6px rgba(5,150,105,0.4);
+}
+[data-theme="dark"] .status-dot {
+  background: #34d399;
+  box-shadow: 0 0 6px rgba(52,211,153,0.5);
 }
 
 @media (max-width: 768px) {

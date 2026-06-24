@@ -14,8 +14,7 @@ import './styles/global.css';
 
 function getInitialTheme() {
   const saved = localStorage.getItem('portfolio-theme');
-  if (saved) return saved;
-  return window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+  return saved || 'light';
 }
 
 export default function App() {

@@ -270,9 +270,7 @@
 }
 .score-val { color: #22d3ee; }
 
-/* Light theme adaptation */
+/* EMS preview stays dark in both themes — it represents a dark-themed dashboard app */
 [data-theme="light"] .ems-preview {
-  background: #1e2d40;
-  border-color: rgba(0,0,0,0.15);
   box-shadow: 0 20px 60px rgba(0,0,0,0.25), 0 0 0 1px rgba(8,145,178,0.1);
 }

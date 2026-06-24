@@ -22,12 +22,23 @@ export default function Navbar({ theme, toggleTheme }) {
     return () => window.removeEventListener('scroll', onScroll);
   }, []);
 
+  useEffect(() => {
+    const onKey = (e) => { if (e.key === 'Escape') setMenuOpen(false); };
+    window.addEventListener('keydown', onKey);
+    return () => window.removeEventListener('keydown', onKey);
+  }, []);
+
+  useEffect(() => {
+    document.body.style.overflow = menuOpen ? 'hidden' : '';
+    return () => { document.body.style.overflow = ''; };
+  }, [menuOpen]);
+
   const close = () => setMenuOpen(false);
 
   return (
     <header className={`navbar${scrolled ? ' navbar--scrolled' : ''}`} role="banner">
       <div className="navbar-inner container">
-        <a href="#" className="navbar-brand" onClick={close}>
+        <a href="#home" className="navbar-brand" onClick={close}>
           <div className="brand-dot" aria-hidden="true" />
           Aleh Sitsko
         </a>
@@ -65,6 +76,7 @@ export default function Navbar({ theme, toggleTheme }) {
           onClick={() => setMenuOpen(o => !o)}
           aria-label={menuOpen ? 'Close menu' : 'Open menu'}
           aria-expanded={menuOpen}
+          aria-controls="mobile-nav"
         >
           {menuOpen ? <X size={20} /> : <Menu size={20} />}
         </button>
@@ -73,7 +85,7 @@ export default function Navbar({ theme, toggleTheme }) {
       {menuOpen && (
         <>
           <div className="mobile-overlay" onClick={close} aria-hidden="true" />
-          <nav className="mobile-menu" role="dialog" aria-label="Mobile navigation">
+          <nav id="mobile-nav" className="mobile-menu" aria-label="Mobile navigation">
             {NAV_LINKS.map(({ href, label }) => (
               <a key={href} href={href} className="mobile-link" onClick={close}>{label}</a>
             ))}

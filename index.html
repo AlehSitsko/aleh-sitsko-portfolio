@@ -2,20 +2,39 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- Theme initialization: prevents flash of wrong theme before React loads -->
+    <script>
+      (function(){
+        var t = localStorage.getItem('portfolio-theme');
+        document.documentElement.setAttribute('data-theme', t || 'light');
+      })();
+    </script>
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
 
     <!-- SEO -->
     <title>Aleh Sitsko | Operations-Focused Full Stack Developer</title>
     <meta name="description" content="Operations-focused full stack developer building practical workflow systems, internal tools, dashboards, scheduling applications, and business software." />
     <meta name="keywords" content="full stack developer, React, Flask, Python, EMS, workflow systems, internal tools, Philadelphia" />
     <meta name="author" content="Aleh Sitsko" />
+    <link rel="canonical" href="https://alehsitsko.dev" />
+
+    <!-- Theme color (light default) -->
+    <meta name="theme-color" content="#f8fafc" />
 
     <!-- Open Graph -->
     <meta property="og:title" content="Aleh Sitsko | Operations-Focused Full Stack Developer" />
     <meta property="og:description" content="Building practical web applications, internal tools, workflow systems, and operations-focused software." />
     <meta property="og:type" content="website" />
     <meta property="og:url" content="https://alehsitsko.dev" />
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:title" content="Aleh Sitsko | Operations-Focused Full Stack Developer" />
+    <meta name="twitter:description" content="Building practical web applications, internal tools, workflow systems, and operations-focused software." />
   </head>
   <body>
     <div id="root"></div>

@@ -7,9 +7,11 @@
 html {
   scroll-behavior: smooth;
   font-size: 16px;
+  overflow-x: hidden;
 }
 
 body {
+  overflow-x: hidden;
   background: var(--bg-main);
   color: var(--text-main);
   font-family: 'Inter', system-ui, -apple-system, sans-serif;
@@ -32,6 +34,10 @@ button { font-family: inherit; cursor: pointer; }
 
 .section { padding: 80px 0; }
 .section-alt { background: var(--bg-section); }
+
+/* ── Anchor offset for fixed navbar ─────────────────────── */
+section[id] { scroll-margin-top: 72px; }
+#home       { scroll-margin-top: 0; }
 
 /* ── Typography helpers ──────────────────────────────────── */
 .label {
@@ -87,15 +93,16 @@ button { font-family: inherit; cursor: pointer; }
 
 .btn-primary {
   background: var(--accent);
-  color: #020617;
+  color: #fff;
 }
 .btn-primary:hover {
-  filter: brightness(1.1);
+  filter: brightness(1.08);
   transform: translateY(-1px);
-  box-shadow: 0 4px 18px rgba(34,211,238,0.28);
-}
-[data-theme="light"] .btn-primary:hover {
   box-shadow: 0 4px 18px rgba(8,145,178,0.28);
+}
+[data-theme="dark"] .btn-primary { color: #020617; }
+[data-theme="dark"] .btn-primary:hover {
+  box-shadow: 0 4px 18px rgba(34,211,238,0.28);
 }
 
 .btn-outline {
@@ -170,6 +177,15 @@ button { font-family: inherit; cursor: pointer; }
 ::-webkit-scrollbar { width: 6px; }
 ::-webkit-scrollbar-track { background: transparent; }
 ::-webkit-scrollbar-thumb { background: var(--border); border-radius: 3px; }
+
+/* ── Reduced motion ──────────────────────────────────────── */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    transition-duration: 0.01ms !important;
+  }
+  html { scroll-behavior: auto; }
+}
 
 /* ── Responsive ──────────────────────────────────────────── */
 @media (max-width: 768px) {
