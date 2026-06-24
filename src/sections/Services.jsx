@@ -5,16 +5,16 @@ const SERVICES = [
   {
     icon: Globe,
     title: 'Business Websites',
-    desc: 'Clean, responsive websites for local businesses, service companies, contractors, logistics, beauty professionals, and small e-commerce brands.',
+    desc: 'Clean, responsive websites for local businesses, service companies, contractors, and small e-commerce brands.',
   },
   {
     icon: LayoutDashboard,
-    title: 'Internal Dashboards',
-    desc: 'Simple admin panels and dashboards for managing records, requests, employees, calls, jobs, or daily operations.',
+    title: 'Internal Workflow Dashboards',
+    desc: 'Simple admin panels and dashboards for managing records, employees, calls, jobs, or daily operations.',
   },
   {
     icon: ClipboardList,
-    title: 'Intake & Quote Forms',
+    title: 'Intake & Quote Systems',
     desc: 'Smart forms with validation, pricing logic, customer information, status tracking, and clean data entry.',
   },
   {
@@ -26,23 +26,23 @@ const SERVICES = [
 
 export default function Services() {
   return (
-    <section className="section" id="services" aria-label="Services">
+    <section className="section section-alt" id="services" aria-label="Freelance services">
       <div className="container">
         <div className="label">
           <span className="label-line" aria-hidden="true" />
-          Services
+          Freelance
         </div>
 
         <div className="services-head">
-          <h2 className="section-heading">What I Build</h2>
-          <p className="services-avail">Available for selected freelance projects.</p>
+          <h2 className="section-heading">Practical Tools for Real Operations</h2>
+          <p className="services-sub">For small businesses, operations teams, and internal workflows.</p>
         </div>
 
         <div className="services-grid">
           {SERVICES.map(({ icon: Icon, title, desc }) => (
             <div key={title} className="service-card card">
               <div className="service-icon" aria-hidden="true">
-                <Icon size={20} strokeWidth={1.7} />
+                <Icon size={18} strokeWidth={1.7} />
               </div>
               <h3 className="service-title">{title}</h3>
               <p className="service-desc">{desc}</p>
@@ -50,11 +50,9 @@ export default function Services() {
           ))}
         </div>
 
-        <div className="services-cta">
-          <p>
-            If your business runs on phone calls, spreadsheets, paper forms, or disconnected
-            tools, I can help turn that process into a practical web application.
-          </p>
+        <div className="services-note">
+          In addition to software roles, I'm available for selected freelance projects where
+          my operations background can help small businesses improve workflows.
         </div>
       </div>
     </section>

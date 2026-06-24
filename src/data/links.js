@@ -1,9 +1,10 @@
 export const LINKS = {
-  github:   'https://github.com/AlehSitsko',
-  linkedin: 'https://linkedin.com/in/alehsitsko',
-  email:    'mailto:sitskoaleh@gmail.com',
-  resume:   '#',   // Replace with real PDF URL
-  domain:   'https://alehsitsko.dev',
+  github:      'https://github.com/AlehSitsko',
+  linkedin:    'https://linkedin.com/in/alehsitsko',
+  email:       'mailto:sitskoaleh@gmail.com',
+  resume:      '#',   // Replace with real PDF URL
+  certificate: 'https://coursera.org/verify/professional-cert/PMUCKDP1FGIE',
+  domain:      'https://alehsitsko.dev',
 };
 
 export const PROJECTS = [
@@ -26,8 +27,8 @@ export const PROJECTS = [
       'User management',
     ],
     links: {
-      github:    'https://github.com/AlehSitsko/ems-workflow-system',
-      demo:      null,
+      github:      'https://github.com/AlehSitsko/ems-workflow-system',
+      demo:        null,
       walkthrough: null,
     },
     disclaimer: 'Portfolio prototype. Not intended for production medical use and should not be used with real patient data.',

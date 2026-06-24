@@ -1,4 +1,4 @@
-import { Mail, Download } from 'lucide-react';
+import { Mail, Download, ExternalLink } from 'lucide-react';
 import { GithubIcon, LinkedinIcon } from '../components/icons/BrandIcons';
 import { LINKS } from '../data/links';
 import './Contact.css';
@@ -38,7 +38,16 @@ export default function Contact() {
                 <Download size={15} />
                 Download Resume
               </a>
+              <a href={LINKS.certificate} target="_blank" rel="noopener noreferrer"
+                className="btn btn-outline">
+                <ExternalLink size={15} />
+                View Certificate
+              </a>
             </div>
+
+            <p className="contact-refs">
+              References and recommendations available upon request.
+            </p>
           </div>
 
           <div className="contact-right">
@@ -67,6 +76,13 @@ export default function Contact() {
                 <span className="status-dot" aria-hidden="true" />
                 Open to opportunities
               </div>
+            </div>
+            <div className="contact-detail">
+              <div className="contact-detail-label">Certification</div>
+              <a href={LINKS.certificate} target="_blank" rel="noopener noreferrer"
+                className="contact-detail-value">
+                IBM Full Stack Developer
+              </a>
             </div>
           </div>
         </div>
