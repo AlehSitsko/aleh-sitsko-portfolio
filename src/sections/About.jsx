@@ -63,7 +63,7 @@ export default function About() {
               </div>
               <div className="pillar">
                 <BadgeCheck size={15} aria-hidden="true" />
-                <span>Real projects shipped</span>
+                <span>Full-stack projects built</span>
               </div>
             </div>
           </div>

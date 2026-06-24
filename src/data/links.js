@@ -2,8 +2,8 @@ export const LINKS = {
   github:      'https://github.com/AlehSitsko',
   linkedin:    'https://linkedin.com/in/alehsitsko',
   email:       'mailto:sitskoaleh@gmail.com',
-  resume:      '#',   // Replace with real PDF URL
-  certificate: 'https://coursera.org/share/530a3b57b1ef0f5c30c1c94845a31a96',
+  resume:      '/Aleh_Sitsko_Resume_Web.pdf',
+  certificate: 'https://www.coursera.org/account/accomplishments/specialization/NMZB7BRO9C6E',
   domain:      'https://alehsitsko.dev',
 };
 

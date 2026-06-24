@@ -14,25 +14,12 @@ const GROUPS = [
   {
     title: 'Database',
     cls: 'group-db',
-    skills: ['SQLite', 'SQL fundamentals', 'PostgreSQL (planned)'],
+    skills: ['SQLite', 'SQL fundamentals', 'PostgreSQL basics'],
   },
   {
     title: 'Tools',
     cls: 'group-tools',
-    skills: ['Git', 'GitHub', 'VS Code', 'Vercel', 'Cloudflare Pages', 'GitHub Pages'],
-  },
-  {
-    title: 'Domain Knowledge',
-    cls: 'group-domain',
-    domain: true,
-    skills: [
-      'EMS dispatch',
-      'Operations management',
-      'Call intake workflows',
-      'Crew scheduling',
-      'Employee tracking',
-      'Quality control',
-    ],
+    skills: ['Git', 'GitHub', 'VS Code', 'Vercel', 'Cloudflare Pages', 'GitHub Pages', 'Postman'],
   },
 ];
 
@@ -49,12 +36,12 @@ export default function Skills() {
         </h2>
 
         <div className="skills-grid">
-          {GROUPS.map(({ title, cls, skills, domain }) => (
+          {GROUPS.map(({ title, cls, skills }) => (
             <div key={title} className={`skill-group card ${cls}`}>
-              <h3 className={`skill-group-title${domain ? ' domain-title' : ''}`}>{title}</h3>
+              <h3 className="skill-group-title">{title}</h3>
               <div className="skill-tags">
                 {skills.map(s => (
-                  <span key={s} className={`badge${domain ? ' badge-domain' : ''}`}>{s}</span>
+                  <span key={s} className="badge">{s}</span>
                 ))}
               </div>
             </div>

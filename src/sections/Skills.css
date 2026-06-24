@@ -1,6 +1,6 @@
 .skills-grid {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(4, 1fr);
   gap: 18px;
 }
 
@@ -19,35 +19,16 @@
   border-bottom: 1px solid var(--border);
 }
 
-.domain-title {
-  color: var(--accent);
-  border-bottom-color: var(--border-accent);
-}
-
 .skill-tags {
   display: flex;
   flex-wrap: wrap;
   gap: 6px;
 }
 
-.badge-domain {
-  background: var(--accent-soft) !important;
-  color: var(--accent) !important;
-  border-color: var(--border-accent) !important;
-}
-
-.group-domain {
-  grid-column: span 3;
-  background: var(--bg-card-soft);
-  border-color: var(--border-accent);
-}
-
 @media (max-width: 900px) {
   .skills-grid { grid-template-columns: repeat(2, 1fr); }
-  .group-domain { grid-column: span 2; }
 }
 
 @media (max-width: 540px) {
   .skills-grid { grid-template-columns: 1fr; }
-  .group-domain { grid-column: span 1; }
 }
