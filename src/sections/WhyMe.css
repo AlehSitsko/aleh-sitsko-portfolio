@@ -1,23 +1,23 @@
 .whyme-statement {
   text-align: center;
-  margin-bottom: 64px;
+  margin-bottom: 48px;
 }
 
 .whyme-quote {
-  font-size: clamp(28px, 4vw, 42px);
-  font-weight: 700;
-  color: var(--text);
-  letter-spacing: -1px;
+  font-size: clamp(22px, 3vw, 30px);
+  font-weight: 800;
+  color: var(--text-main);
   line-height: 1.2;
-  margin: 0;
-  font-style: normal;
-  border: none;
-  padding: 0;
+  letter-spacing: -0.4px;
+  margin-bottom: 12px;
 }
 
-.whyme-quote em {
-  color: var(--accent);
-  font-style: italic;
+.whyme-sub {
+  font-size: 15px;
+  color: var(--text-muted);
+  max-width: 560px;
+  margin: 0 auto;
+  line-height: 1.7;
 }
 
 .whyme-cards {
@@ -27,31 +27,38 @@
 }
 
 .whyme-card {
-  text-align: center;
-  padding: 36px 28px;
+  padding: 28px 26px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
 }
 
 .whyme-icon {
-  font-size: 32px;
-  margin-bottom: 16px;
-  line-height: 1;
+  width: 40px;
+  height: 40px;
+  border-radius: 10px;
+  background: var(--accent-soft);
+  border: 1px solid var(--border-accent);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--accent);
+  flex-shrink: 0;
 }
 
-.whyme-title {
+.whyme-card-title {
   font-size: 16px;
   font-weight: 700;
-  color: var(--text);
-  margin: 0 0 10px;
+  color: var(--text-main);
+  line-height: 1.3;
 }
 
-.whyme-desc {
+.whyme-card-desc {
   font-size: 14px;
   color: var(--text-muted);
-  line-height: 1.7;
-  margin: 0;
+  line-height: 1.65;
 }
 
 @media (max-width: 768px) {
   .whyme-cards { grid-template-columns: 1fr; gap: 14px; }
-  .whyme-card { padding: 28px 24px; text-align: left; }
 }

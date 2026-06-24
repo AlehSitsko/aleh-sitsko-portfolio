@@ -1,44 +1,60 @@
 import './Skills.css';
 
-const SKILL_GROUPS = [
+const GROUPS = [
   {
-    category: 'Frontend',
-    items: ['React', 'JavaScript', 'Vite', 'Bootstrap', 'CSS', 'HTML'],
+    title: 'Frontend',
+    cls: 'group-frontend',
+    skills: ['React', 'JavaScript ES6+', 'Vite', 'Bootstrap', 'Responsive UI', 'React Router'],
   },
   {
-    category: 'Backend',
-    items: ['Python', 'Flask', 'REST API', 'SQLAlchemy'],
+    title: 'Backend',
+    cls: 'group-backend',
+    skills: ['Python', 'Flask', 'Flask Blueprints', 'REST API', 'Flask-CORS', 'SQLAlchemy'],
   },
   {
-    category: 'Database',
-    items: ['SQLite', 'SQL', 'PostgreSQL'],
+    title: 'Database',
+    cls: 'group-db',
+    skills: ['SQLite', 'SQL fundamentals', 'PostgreSQL (planned)'],
   },
   {
-    category: 'Tools',
-    items: ['Git', 'GitHub', 'Cloudflare Pages', 'VS Code'],
+    title: 'Tools',
+    cls: 'group-tools',
+    skills: ['Git', 'GitHub', 'VS Code', 'Vercel', 'Cloudflare Pages', 'GitHub Pages'],
   },
   {
-    category: 'Domain Knowledge',
-    items: ['EMS Dispatch', 'Operations Mgmt', 'Workflow Design', 'Scheduling', 'Crew Planning', 'Employee Tracking'],
+    title: 'Domain Knowledge',
+    cls: 'group-domain',
+    domain: true,
+    skills: [
+      'EMS dispatch',
+      'Operations management',
+      'Call intake workflows',
+      'Crew scheduling',
+      'Employee tracking',
+      'Quality control',
+    ],
   },
 ];
 
 export default function Skills() {
   return (
-    <section className="section">
+    <section className="section section-alt" id="skills" aria-label="Skills">
       <div className="container">
-        <div className="section-label">Skills</div>
-        <h2 className="section-title" style={{ marginBottom: 48 }}>Technical & Domain</h2>
+        <div className="label">
+          <span className="label-line" aria-hidden="true" />
+          Skills
+        </div>
+        <h2 className="section-heading" style={{ marginBottom: 32 }}>
+          Technical Expertise
+        </h2>
 
         <div className="skills-grid">
-          {SKILL_GROUPS.map(({ category, items }) => (
-            <div key={category} className="skills-group">
-              <div className="skills-category">{category}</div>
-              <div className="skills-items">
-                {items.map(item => (
-                  <span key={item} className={`badge ${category === 'Domain Knowledge' ? 'badge-domain' : ''}`}>
-                    {item}
-                  </span>
+          {GROUPS.map(({ title, cls, skills, domain }) => (
+            <div key={title} className={`skill-group card ${cls}`}>
+              <h3 className={`skill-group-title${domain ? ' domain-title' : ''}`}>{title}</h3>
+              <div className="skill-tags">
+                {skills.map(s => (
+                  <span key={s} className={`badge${domain ? ' badge-domain' : ''}`}>{s}</span>
                 ))}
               </div>
             </div>

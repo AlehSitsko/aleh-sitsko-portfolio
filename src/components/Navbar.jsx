@@ -1,84 +1,101 @@
 import { useState, useEffect } from 'react';
+import { Sun, Moon, Menu, X, Mail } from 'lucide-react';
+import { GithubIcon, LinkedinIcon } from './icons/BrandIcons';
+import { LINKS } from '../data/links';
 import './Navbar.css';
 
 const NAV_LINKS = [
-  { href: '#home',       label: 'Home' },
-  { href: '#projects',   label: 'Projects' },
-  { href: '#services',   label: 'Services' },
+  { href: '#projects',   label: 'Projects'   },
+  { href: '#services',   label: 'Services'   },
   { href: '#experience', label: 'Experience' },
-  { href: '#contact',    label: 'Contact' },
+  { href: '#contact',    label: 'Contact'    },
 ];
 
-export default function Navbar() {
-  const [isDark, setIsDark] = useState(true);
+export default function Navbar({ theme, toggleTheme }) {
   const [scrolled, setScrolled] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
 
   useEffect(() => {
-    const theme = document.documentElement.getAttribute('data-theme');
-    setIsDark(theme !== 'light');
-
-    const onScroll = () => setScrolled(window.scrollY > 20);
+    const onScroll = () => setScrolled(window.scrollY > 24);
     window.addEventListener('scroll', onScroll, { passive: true });
     return () => window.removeEventListener('scroll', onScroll);
   }, []);
 
-  function toggleTheme() {
-    const next = isDark ? 'light' : 'dark';
-    setIsDark(!isDark);
-    document.documentElement.setAttribute('data-theme', next);
-    localStorage.setItem('portfolio-theme', next);
-  }
-
-  function handleNavClick() {
-    setMenuOpen(false);
-  }
+  const close = () => setMenuOpen(false);
 
   return (
-    <header className={`navbar${scrolled ? ' navbar--scrolled' : ''}`}>
+    <header className={`navbar${scrolled ? ' navbar--scrolled' : ''}`} role="banner">
       <div className="navbar-inner container">
-        <a href="#home" className="navbar-logo">
-          <span className="navbar-logo-dot" />
+        <a href="#" className="navbar-brand" onClick={close}>
+          <div className="brand-dot" aria-hidden="true" />
           Aleh Sitsko
         </a>
 
-        <nav className={`navbar-links${menuOpen ? ' navbar-links--open' : ''}`}>
+        <nav className="navbar-links" aria-label="Primary navigation">
           {NAV_LINKS.map(({ href, label }) => (
-            <a key={href} href={href} className="navbar-link" onClick={handleNavClick}>
-              {label}
-            </a>
+            <a key={href} href={href} className="nav-link">{label}</a>
           ))}
-          <a
-            href="mailto:sitskoaleh@gmail.com"
-            className="btn btn-primary navbar-cta"
-            onClick={handleNavClick}
-          >
-            Hire Me
-          </a>
         </nav>
 
         <div className="navbar-actions">
           <button
-            className="theme-toggle"
+            className="btn btn-ghost btn-sm icon-btn"
             onClick={toggleTheme}
-            aria-label="Toggle theme"
-            title={isDark ? 'Switch to light mode' : 'Switch to dark mode'}
+            aria-label={theme === 'dark' ? 'Switch to light theme' : 'Switch to dark theme'}
           >
-            {isDark ? '☀️' : '🌙'}
+            {theme === 'dark' ? <Sun size={16} /> : <Moon size={16} />}
           </button>
-
-          <button
-            className={`hamburger${menuOpen ? ' hamburger--open' : ''}`}
-            onClick={() => setMenuOpen(o => !o)}
-            aria-label="Toggle navigation"
-          >
-            <span /><span /><span />
-          </button>
+          <a href={LINKS.github} target="_blank" rel="noopener noreferrer"
+            className="btn btn-ghost btn-sm icon-btn" aria-label="GitHub profile">
+            <GithubIcon size={16} />
+          </a>
+          <a href={LINKS.linkedin} target="_blank" rel="noopener noreferrer"
+            className="btn btn-ghost btn-sm icon-btn" aria-label="LinkedIn profile">
+            <LinkedinIcon size={16} />
+          </a>
+          <a href={LINKS.email} className="btn btn-outline btn-sm">
+            <Mail size={14} />
+            Contact
+          </a>
         </div>
+
+        <button
+          className="navbar-hamburger"
+          onClick={() => setMenuOpen(o => !o)}
+          aria-label={menuOpen ? 'Close menu' : 'Open menu'}
+          aria-expanded={menuOpen}
+        >
+          {menuOpen ? <X size={20} /> : <Menu size={20} />}
+        </button>
       </div>
 
       {menuOpen && (
-        <div className="navbar-overlay" onClick={() => setMenuOpen(false)} />
+        <>
+          <div className="mobile-overlay" onClick={close} aria-hidden="true" />
+          <nav className="mobile-menu" role="dialog" aria-label="Mobile navigation">
+            {NAV_LINKS.map(({ href, label }) => (
+              <a key={href} href={href} className="mobile-link" onClick={close}>{label}</a>
+            ))}
+            <div className="mobile-divider" />
+            <div className="mobile-actions">
+              <a href={LINKS.github} target="_blank" rel="noopener noreferrer"
+                className="btn btn-outline" onClick={close}>
+                <GithubIcon size={15} /> GitHub
+              </a>
+              <a href={LINKS.linkedin} target="_blank" rel="noopener noreferrer"
+                className="btn btn-outline" onClick={close}>
+                <LinkedinIcon size={15} /> LinkedIn
+              </a>
+              <a href={LINKS.email} className="btn btn-primary" onClick={close}>
+                <Mail size={15} /> Contact Me
+              </a>
+              <button className="btn btn-ghost theme-mobile-btn" onClick={toggleTheme}>
+                {theme === 'dark' ? <Sun size={15} /> : <Moon size={15} />}
+                {theme === 'dark' ? 'Light mode' : 'Dark mode'}
+              </button>
+            </div>
+          </nav>
+        </>
       )}
     </header>
   );

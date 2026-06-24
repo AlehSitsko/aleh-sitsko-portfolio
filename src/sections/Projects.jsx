@@ -1,62 +1,61 @@
+import { ExternalLink } from 'lucide-react';
+import { GithubIcon } from '../components/icons/BrandIcons';
+import NexvoraPreview from '../components/previews/NexvoraPreview';
+import CallFormPreview from '../components/previews/CallFormPreview';
+import { PROJECTS } from '../data/links';
 import './Projects.css';
 
-const PROJECTS = [
-  {
-    title: 'Nexvora Group Website',
-    desc: 'Responsive business website demo for a wholesale and e-commerce company.',
-    tech: ['HTML', 'CSS', 'JavaScript'],
-    links: [
-      { label: 'Live Demo', href: '#', primary: true },
-      { label: 'GitHub', href: 'https://github.com/AlehSitsko', primary: false },
-    ],
-  },
-  {
-    title: 'Call Taking Form — React Demo',
-    desc: 'Frontend EMS call intake prototype with guided wizard, quality scoring, and dispatch preview. Deployed via GitHub Pages.',
-    tech: ['React', 'Vite', 'JavaScript'],
-    links: [
-      { label: 'Live Demo', href: 'https://alehsitsko.github.io/Call-Taking-Form-React/', primary: true },
-      { label: 'GitHub', href: 'https://github.com/AlehSitsko/Call-Taking-Form-React', primary: false },
-    ],
-  },
-];
+const nexvora   = PROJECTS.find(p => p.id === 'nexvora');
+const calltaking = PROJECTS.find(p => p.id === 'calltaking');
+
+function ProjectCard({ project, Preview }) {
+  return (
+    <article className="project-card card">
+      <div className="project-preview">
+        <Preview />
+      </div>
+      <div className="project-info">
+        <h3 className="project-title">{project.title}</h3>
+        <p className="project-desc">{project.desc}</p>
+        <div className="project-stack">
+          {project.stack.map(s => (
+            <span key={s} className="badge">{s}</span>
+          ))}
+        </div>
+        <div className="project-links">
+          {project.links.demo && (
+            <a href={project.links.demo} target="_blank" rel="noopener noreferrer"
+              className="btn btn-primary btn-sm">
+              <ExternalLink size={13} /> Live Demo
+            </a>
+          )}
+          {project.links.github && (
+            <a href={project.links.github} target="_blank" rel="noopener noreferrer"
+              className="btn btn-outline btn-sm">
+              <GithubIcon size={13} /> View Code
+            </a>
+          )}
+        </div>
+      </div>
+    </article>
+  );
+}
 
 export default function Projects() {
   return (
-    <section className="section">
+    <section className="section section-alt" aria-label="Other projects">
       <div className="container">
-        <div className="section-label">More Projects</div>
-        <h2 className="section-title" style={{ marginBottom: 40 }}>Other Work</h2>
+        <div className="label">
+          <span className="label-line" aria-hidden="true" />
+          Other Work
+        </div>
+        <div className="section-heading" style={{ marginBottom: 36 }}>
+          More Projects
+        </div>
 
         <div className="projects-grid">
-          {PROJECTS.map(({ title, desc, tech, links }) => (
-            <div key={title} className="card project-card">
-              <div className="img-placeholder project-placeholder">
-                <span style={{ fontSize: 24 }}>📁</span>
-              </div>
-              <div className="project-body">
-                <h3 className="project-title">{title}</h3>
-                <p className="project-desc">{desc}</p>
-                <div className="project-tech">
-                  {tech.map(t => <span key={t} className="badge badge-neutral">{t}</span>)}
-                </div>
-                <div className="project-links">
-                  {links.map(({ label, href, primary }) => (
-                    <a
-                      key={label}
-                      href={href}
-                      target="_blank"
-                      rel="noreferrer"
-                      className={`btn ${primary ? 'btn-primary' : 'btn-outline'}`}
-                      style={{ fontSize: 13, padding: '8px 18px' }}
-                    >
-                      {label}
-                    </a>
-                  ))}
-                </div>
-              </div>
-            </div>
-          ))}
+          <ProjectCard project={nexvora}    Preview={NexvoraPreview}  />
+          <ProjectCard project={calltaking} Preview={CallFormPreview} />
         </div>
       </div>
     </section>

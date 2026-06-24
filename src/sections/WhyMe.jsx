@@ -1,40 +1,45 @@
+import { Briefcase, GitBranch, Wrench } from 'lucide-react';
 import './WhyMe.css';
 
 const CARDS = [
   {
-    icon: '🏥',
+    icon: Briefcase,
     title: 'Real Operations Background',
-    desc: 'Years managing EMS dispatch, crew scheduling, and operational workflows — not a simulation. I know how dispatch actually works.',
+    desc: 'Managed EMS dispatch, daily crew scheduling, and real-time workflow issues — not textbook scenarios.',
   },
   {
-    icon: '⚙️',
+    icon: GitBranch,
     title: 'Workflow-First Development',
-    desc: 'I map the process before touching the keyboard. The software serves the workflow, not the other way around.',
+    desc: 'I map the business process before writing a single line. The software follows the workflow, not the other way around.',
   },
   {
-    icon: '🛠️',
+    icon: Wrench,
     title: 'Practical Business Tools',
-    desc: 'No overengineering. I build focused internal tools that your team can actually use — forms, dashboards, schedulers, trackers.',
+    desc: 'No unnecessary complexity. Every feature is there because someone actually needs it in their daily operations.',
   },
 ];
 
 export default function WhyMe() {
   return (
-    <section id="why-me" className="section">
+    <section className="section section-alt" id="whyme" aria-label="Why work with me">
       <div className="container">
         <div className="whyme-statement">
-          <blockquote className="whyme-quote">
-            "I understand your workflow<br />
-            <em>before</em> I write the code."
-          </blockquote>
+          <p className="whyme-quote">
+            I understand your workflow before I write the code.
+          </p>
+          <p className="whyme-sub">
+            I build tools that solve real workflow problems because I have lived those problems firsthand.
+          </p>
         </div>
 
         <div className="whyme-cards">
-          {CARDS.map(({ icon, title, desc }) => (
-            <div key={title} className="card whyme-card">
-              <div className="whyme-icon">{icon}</div>
-              <h3 className="whyme-title">{title}</h3>
-              <p className="whyme-desc">{desc}</p>
+          {CARDS.map(({ icon: Icon, title, desc }) => (
+            <div key={title} className="whyme-card card">
+              <div className="whyme-icon" aria-hidden="true">
+                <Icon size={18} strokeWidth={1.8} />
+              </div>
+              <h3 className="whyme-card-title">{title}</h3>
+              <p className="whyme-card-desc">{desc}</p>
             </div>
           ))}
         </div>
