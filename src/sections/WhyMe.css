@@ -1,0 +1,57 @@
+.whyme-statement {
+  text-align: center;
+  margin-bottom: 64px;
+}
+
+.whyme-quote {
+  font-size: clamp(28px, 4vw, 42px);
+  font-weight: 700;
+  color: var(--text);
+  letter-spacing: -1px;
+  line-height: 1.2;
+  margin: 0;
+  font-style: normal;
+  border: none;
+  padding: 0;
+}
+
+.whyme-quote em {
+  color: var(--accent);
+  font-style: italic;
+}
+
+.whyme-cards {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+}
+
+.whyme-card {
+  text-align: center;
+  padding: 36px 28px;
+}
+
+.whyme-icon {
+  font-size: 32px;
+  margin-bottom: 16px;
+  line-height: 1;
+}
+
+.whyme-title {
+  font-size: 16px;
+  font-weight: 700;
+  color: var(--text);
+  margin: 0 0 10px;
+}
+
+.whyme-desc {
+  font-size: 14px;
+  color: var(--text-muted);
+  line-height: 1.7;
+  margin: 0;
+}
+
+@media (max-width: 768px) {
+  .whyme-cards { grid-template-columns: 1fr; gap: 14px; }
+  .whyme-card { padding: 28px 24px; text-align: left; }
+}
