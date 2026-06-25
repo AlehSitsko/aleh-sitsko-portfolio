@@ -274,3 +274,13 @@
 [data-theme="light"] .ems-preview {
   box-shadow: 0 20px 60px rgba(0,0,0,0.25), 0 0 0 1px rgba(8,145,178,0.1);
 }
+
+/* Mobile: hide sidebar to save space on small screens */
+@media (max-width: 480px) {
+  .ems-sidebar { display: none; }
+  .ems-body { height: 280px; }
+}
+@media (max-width: 360px) {
+  .ems-body { height: 240px; }
+  .ems-stats { grid-template-columns: repeat(2, 1fr); }
+}

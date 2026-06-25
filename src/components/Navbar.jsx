@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import { Sun, Moon, Menu, X, Mail } from 'lucide-react';
+import { Sun, Moon, Menu, X, Mail, Download } from 'lucide-react';
 import { GithubIcon, LinkedinIcon } from './icons/BrandIcons';
 import { LINKS } from '../data/links';
 import './Navbar.css';
@@ -98,6 +98,9 @@ export default function Navbar({ theme, toggleTheme }) {
               <a href={LINKS.linkedin} target="_blank" rel="noopener noreferrer"
                 className="btn btn-outline" onClick={close}>
                 <LinkedinIcon size={15} /> LinkedIn
+              </a>
+              <a href={LINKS.resume} className="btn btn-outline" onClick={close}>
+                <Download size={15} /> Resume
               </a>
               <a href={LINKS.email} className="btn btn-primary" onClick={close}>
                 <Mail size={15} /> Contact Me

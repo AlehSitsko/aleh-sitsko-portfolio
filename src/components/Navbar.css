@@ -144,4 +144,11 @@
   .navbar-links  { display: none; }
   .navbar-actions { display: none; }
   .navbar-hamburger { display: flex; align-items: center; justify-content: center; }
+  /* Always show frosted bg on mobile so content below is never visible behind navbar */
+  .navbar {
+    background: var(--topbar-bg);
+    border-bottom-color: var(--topbar-border);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+  }
 }
