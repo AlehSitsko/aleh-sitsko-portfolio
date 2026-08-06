@@ -1,10 +1,17 @@
-import { Check, AlertCircle, Video } from 'lucide-react';
+import { Check, AlertCircle, Download, FileText } from 'lucide-react';
 import { GithubIcon } from '../components/icons/BrandIcons';
 import EMSPreview from '../components/previews/EMSPreview';
 import { PROJECTS } from '../data/links';
 import './FeaturedProject.css';
 
 const ems = PROJECTS.find(p => p.id === 'ems');
+
+// Real screenshots shown under the featured card (files in public/ems/).
+const SHOTS = [
+  ['/ems/dispatch-board.png', 'Dispatch Board'],
+  ['/ems/calendar.png',       'Operational Calendar'],
+  ['/ems/reports.png',        'Reports & Analytics'],
+];
 
 export default function FeaturedProject() {
   return (
@@ -23,6 +30,7 @@ export default function FeaturedProject() {
               <div className="featured-heading-row">
                 <h2 className="featured-title">{ems.title}</h2>
                 <span className="badge badge-accent">Full Stack</span>
+                <span className="badge">Web + Windows Desktop</span>
               </div>
 
               <p className="featured-desc">{ems.desc}</p>
@@ -46,20 +54,26 @@ export default function FeaturedProject() {
 
               {/* Links */}
               <div className="featured-links">
+                {ems.links.download && (
+                  <a href={ems.links.download} target="_blank" rel="noopener noreferrer"
+                    className="btn btn-primary btn-sm">
+                    <Download size={14} /> Download for Windows
+                  </a>
+                )}
                 <a href={ems.links.github} target="_blank" rel="noopener noreferrer"
                   className="btn btn-outline btn-sm">
                   <GithubIcon size={14} /> View Code
                 </a>
-                {ems.links.walkthrough ? (
-                  <a href={ems.links.walkthrough} target="_blank" rel="noopener noreferrer"
-                    className="btn btn-outline btn-sm">
-                    <Video size={14} /> Video Walkthrough
+                {ems.links.release && (
+                  <a href={ems.links.release} target="_blank" rel="noopener noreferrer"
+                    className="btn btn-ghost btn-sm">
+                    <FileText size={14} /> Release notes
                   </a>
-                ) : (
-                  <span className="btn btn-ghost btn-sm walkthrough-soon">
-                    <Video size={14} /> Walkthrough Coming Soon
-                  </span>
                 )}
+              </div>
+              <div className="featured-download-note">
+                Free Windows installer · offline · no account needed. The build is
+                unsigned, so SmartScreen may warn — choose “More info → Run anyway”.
               </div>
 
               {/* Disclaimer */}
@@ -72,6 +86,21 @@ export default function FeaturedProject() {
             {/* Preview column */}
             <div className="featured-preview">
               <EMSPreview />
+            </div>
+          </div>
+
+          {/* Real media: a live walkthrough GIF + screenshots of the app */}
+          <div className="featured-media">
+            <div className="media-caption">Live walkthrough &amp; screenshots</div>
+            <img className="media-gif" src="/ems/workflow.gif" loading="lazy"
+              alt="EMS Workflow System — dispatcher walkthrough (login, dispatch board, calendar)" />
+            <div className="media-shots">
+              {SHOTS.map(([src, label]) => (
+                <figure key={src} className="media-shot">
+                  <img src={src} loading="lazy" alt={`EMS Workflow System — ${label}`} />
+                  <figcaption>{label}</figcaption>
+                </figure>
+              ))}
             </div>
           </div>
         </div>
