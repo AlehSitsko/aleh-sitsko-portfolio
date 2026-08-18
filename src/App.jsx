@@ -10,6 +10,7 @@ import Experience from './sections/Experience.jsx';
 import Services from './sections/Services.jsx';
 import Contact from './sections/Contact.jsx';
 import Footer from './components/Footer.jsx';
+import EmsCaseStudy from './sections/EmsCaseStudy.jsx';
 import './styles/global.css';
 
 function getInitialTheme() {
@@ -17,30 +18,50 @@ function getInitialTheme() {
   return saved || 'light';
 }
 
+// Minimal hash routing (no router dependency): #/ems opens the case-study page,
+// anything else is the single-page portfolio.
+function useHashRoute() {
+  const [hash, setHash] = useState(() => window.location.hash);
+  useEffect(() => {
+    const onHash = () => setHash(window.location.hash);
+    window.addEventListener('hashchange', onHash);
+    return () => window.removeEventListener('hashchange', onHash);
+  }, []);
+  return hash;
+}
+
 export default function App() {
   const [theme, setTheme] = useState(getInitialTheme);
+  const route = useHashRoute();
+  const isCaseStudy = route === '#/ems';
 
   useEffect(() => {
     document.documentElement.setAttribute('data-theme', theme);
     localStorage.setItem('portfolio-theme', theme);
   }, [theme]);
 
+  useEffect(() => { if (isCaseStudy) window.scrollTo(0, 0); }, [isCaseStudy]);
+
   const toggleTheme = () => setTheme(t => t === 'dark' ? 'light' : 'dark');
 
   return (
     <>
       <Navbar theme={theme} toggleTheme={toggleTheme} />
-      <main>
-        <Hero />
-        <About />
-        <FeaturedProject />
-        <Projects />
-        <Skills />
-        <Certification />
-        <Experience />
-        <Services />
-        <Contact />
-      </main>
+      {isCaseStudy ? (
+        <main><EmsCaseStudy /></main>
+      ) : (
+        <main>
+          <Hero />
+          <About />
+          <FeaturedProject />
+          <Projects />
+          <Skills />
+          <Certification />
+          <Experience />
+          <Services />
+          <Contact />
+        </main>
+      )}
       <Footer />
     </>
   );

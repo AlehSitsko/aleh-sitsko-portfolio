@@ -164,3 +164,23 @@
 @media (max-width: 480px) {
   .featured-features { grid-template-columns: 1fr; gap: 6px; }
 }
+
+/* ── Engineering highlights (stat chips) ───────────────── */
+.featured-stats {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin: 4px 0 22px;
+}
+.featured-stat {
+  display: flex;
+  flex-direction: column;
+  gap: 1px;
+  padding: 7px 11px;
+  border: 1px solid var(--border);
+  border-radius: 9px;
+  background: var(--bg-card-soft);
+}
+.featured-stat-v { font-size: 13px; font-weight: 800; color: var(--accent); letter-spacing: -0.2px; }
+.featured-stat-k { font-size: 10.5px; color: var(--text-muted); }
+.featured-case-link { font-weight: 700; }

@@ -1,4 +1,4 @@
-import { Check, AlertCircle, Download, FileText } from 'lucide-react';
+import { Check, AlertCircle, Download, FileText, ArrowRight } from 'lucide-react';
 import { GithubIcon } from '../components/icons/BrandIcons';
 import EMSPreview from '../components/previews/EMSPreview';
 import { PROJECTS } from '../data/links';
@@ -8,6 +8,7 @@ const ems = PROJECTS.find(p => p.id === 'ems');
 
 // Real screenshots shown under the featured card (files in public/ems/).
 const SHOTS = [
+  ['/ems/dashboard.png',      'Supervisor Dashboard'],
   ['/ems/dispatch-board.png', 'Dispatch Board'],
   ['/ems/calendar.png',       'Operational Calendar'],
   ['/ems/reports.png',        'Reports & Analytics'],
@@ -42,6 +43,16 @@ export default function FeaturedProject() {
                 ))}
               </div>
 
+              {/* Engineering highlights — the depth a technical reviewer looks for */}
+              <div className="featured-stats">
+                {ems.stats.map(s => (
+                  <div key={s.k} className="featured-stat">
+                    <span className="featured-stat-v">{s.v}</span>
+                    <span className="featured-stat-k">{s.k}</span>
+                  </div>
+                ))}
+              </div>
+
               {/* Features grid */}
               <div className="featured-features">
                 {ems.features.map(f => (
@@ -68,6 +79,11 @@ export default function FeaturedProject() {
                   <a href={ems.links.release} target="_blank" rel="noopener noreferrer"
                     className="btn btn-ghost btn-sm">
                     <FileText size={14} /> Release notes
+                  </a>
+                )}
+                {ems.links.caseStudy && (
+                  <a href={ems.links.caseStudy} className="btn btn-outline btn-sm featured-case-link">
+                    Read the case study <ArrowRight size={14} />
                   </a>
                 )}
               </div>
