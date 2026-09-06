@@ -59,8 +59,8 @@ export const PROJECTS = [
   {
     id:    'nexvora',
     title: 'Nexvora Group Website',
-    desc:  'Responsive business website for a wholesale and e-commerce company. Focused on professional presentation, service sections, contact structure, policy pages, and mobile-friendly layout.',
-    stack: ['React', 'Vite', 'JavaScript', 'CSS', 'Vercel'],
+    desc:  'Client project for Nexvora Group, a Pennsylvania-based wholesale & e-commerce company. A responsive multi-page React/Vite site (Home, About, MAP Policy, Contact) built around B2B, supplier-focused positioning — including a dedicated MAP & brand-protection page, per-page SEO and Open Graph metadata, a validated partnership contact form, and all editable content centralized in a single config file. Deployed on Vercel.',
+    stack: ['React', 'Vite', 'JavaScript', 'CSS', 'SEO / OG', 'Vercel'],
     links: {
       demo:   'https://nexvora-group.vercel.app/',
       github: 'https://github.com/AlehSitsko/Nexvora_Group',
