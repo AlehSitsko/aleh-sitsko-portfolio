@@ -12,12 +12,12 @@ export const PROJECTS = [
     id:       'ems',
     featured: true,
     title:    'EMS Workflow System',
-    tagline:  'A production-grade, multi-tenant EMS/NEMT operations platform — built from real dispatch experience, with field-level encryption, multi-worker realtime, and 1,400+ automated tests.',
+    tagline:  'A production-grade, multi-tenant EMS/NEMT operations platform — built from real dispatch experience, with field-level encryption, multi-worker realtime, and 1,700+ automated tests.',
     desc:     'A full-stack EMS/NEMT operations platform: call intake, a live dispatch board, an operational calendar with scheduling and recurring trips, patient and HR records, crew planning, fleet, time & payroll, PTO/leave, tasks, notifications, audit logging, and supervisor analytics. Built with defence-in-depth: session-cookie auth with CSRF, role-based access, runtime multi-tenant isolation, and AES-256-GCM field-level encryption at rest with per-organization envelope keys. Ships as a containerized web app (React + Flask on PostgreSQL / Redis / Nginx) and as a standalone, offline-capable Windows desktop app (Electron + SQLite).',
     stack:    ['React 19', 'Flask', 'Python', 'SQLAlchemy', 'PostgreSQL', 'Redis', 'Electron', 'Docker', 'Nginx', 'REST API', 'pytest', 'Playwright'],
     // Engineering-depth highlights (shown as stat chips) — what a technical reviewer looks for.
     stats: [
-      { v: '1,400+',        k: 'automated tests' },
+      { v: '1,700+',        k: 'automated tests' },
       { v: 'AES-256-GCM',   k: 'field encryption at rest' },
       { v: 'Redis + SSE',   k: 'multi-worker realtime' },
       { v: 'Multi-tenant',  k: 'runtime org isolation' },
