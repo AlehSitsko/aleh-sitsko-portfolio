@@ -4,22 +4,32 @@ const GROUPS = [
   {
     title: 'Frontend',
     cls: 'group-frontend',
-    skills: ['React', 'JavaScript ES6+', 'Vite', 'Bootstrap', 'Responsive UI', 'React Router'],
+    skills: ['React', 'JavaScript ES6+', 'HTML5 & CSS3', 'Vite', 'React Router', 'Responsive UI', 'Bootstrap'],
   },
   {
     title: 'Backend',
     cls: 'group-backend',
-    skills: ['Python', 'Flask', 'Flask Blueprints', 'REST API', 'Flask-CORS', 'SQLAlchemy'],
+    skills: ['Python', 'Flask', 'Flask Blueprints', 'REST API', 'SQLAlchemy', 'Server-Sent Events'],
   },
   {
     title: 'Database',
     cls: 'group-db',
-    skills: ['SQLite', 'SQL fundamentals', 'PostgreSQL basics'],
+    skills: ['PostgreSQL', 'SQLite', 'Alembic migrations', 'SQL'],
+  },
+  {
+    title: 'DevOps & Infra',
+    cls: 'group-devops',
+    skills: ['Docker', 'Redis', 'Nginx', 'Gunicorn', 'GitHub Actions (CI)', 'Cloudflare', 'Vercel'],
+  },
+  {
+    title: 'Testing & QA',
+    cls: 'group-testing',
+    skills: ['pytest', 'Vitest', 'Playwright', 'React Testing Library'],
   },
   {
     title: 'Tools',
     cls: 'group-tools',
-    skills: ['Git', 'GitHub', 'VS Code', 'Vercel', 'Cloudflare Pages', 'GitHub Pages', 'Postman'],
+    skills: ['Git', 'GitHub', 'VS Code', 'Electron', 'Postman'],
   },
 ];
 

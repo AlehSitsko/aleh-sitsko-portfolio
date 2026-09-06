@@ -59,6 +59,7 @@ export default function Certification() {
               deployed to cloud environments.
             </p>
 
+            <div className="cert-topics-label">Curriculum covered</div>
             <div className="cert-topics">
               {TOPICS.map(t => (
                 <span key={t} className="cert-topic">

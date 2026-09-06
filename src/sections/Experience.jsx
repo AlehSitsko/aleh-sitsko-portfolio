@@ -26,7 +26,7 @@ export default function Experience() {
             <div className="exp-metric">
               <div className="metric-header">
                 <TrendingDown size={15} aria-hidden="true" />
-                Workforce Hours / Pay Period
+                Payroll Hours / Pay Period
               </div>
               <div className="metric-numbers">
                 <div className="metric-from">~3,500</div>
@@ -35,7 +35,7 @@ export default function Experience() {
                 </div>
                 <div className="metric-to">~2,400</div>
               </div>
-              <div className="metric-label">hours reduced per pay period</div>
+              <div className="metric-label">≈30% leaner via schedule &amp; dispatch optimization</div>
             </div>
           </div>
 
@@ -46,11 +46,6 @@ export default function Experience() {
             planning, employee tracking, and supervisor visibility.
           </p>
 
-          <div className="exp-quote">
-            <blockquote>
-              I build tools that solve real workflow problems because I have lived those problems firsthand.
-            </blockquote>
-          </div>
         </div>
 
         <div className="exp-additional card">

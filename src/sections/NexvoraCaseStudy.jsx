@@ -163,9 +163,7 @@ export default function NexvoraCaseStudy() {
         </section>
 
         <div className="ems-disclaimer">
-          Client preview demo deployed on Vercel. Built as a client project in exchange for feedback,
-          a testimonial, and portfolio-usage permission; the production domain is connected when the
-          client is ready.
+          Client preview demo deployed on Vercel; the production domain is connected when the client is ready.
         </div>
 
         <div className="ems-cta ems-cta-bottom">
