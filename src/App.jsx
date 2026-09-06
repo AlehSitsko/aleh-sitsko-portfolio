@@ -11,6 +11,7 @@ import Services from './sections/Services.jsx';
 import Contact from './sections/Contact.jsx';
 import Footer from './components/Footer.jsx';
 import EmsCaseStudy from './sections/EmsCaseStudy.jsx';
+import NexvoraCaseStudy from './sections/NexvoraCaseStudy.jsx';
 import './styles/global.css';
 
 function getInitialTheme() {
@@ -33,14 +34,16 @@ function useHashRoute() {
 export default function App() {
   const [theme, setTheme] = useState(getInitialTheme);
   const route = useHashRoute();
-  const isCaseStudy = route === '#/ems';
+  const isEms = route === '#/ems';
+  const isNexvora = route === '#/nexvora';
+  const isCaseStudy = isEms || isNexvora;
 
   useEffect(() => {
     document.documentElement.setAttribute('data-theme', theme);
     localStorage.setItem('portfolio-theme', theme);
   }, [theme]);
 
-  useEffect(() => { if (isCaseStudy) window.scrollTo(0, 0); }, [isCaseStudy]);
+  useEffect(() => { if (isCaseStudy) window.scrollTo(0, 0); }, [route, isCaseStudy]);
 
   const toggleTheme = () => setTheme(t => t === 'dark' ? 'light' : 'dark');
 
@@ -48,7 +51,7 @@ export default function App() {
     <>
       <Navbar theme={theme} toggleTheme={toggleTheme} />
       {isCaseStudy ? (
-        <main><EmsCaseStudy /></main>
+        <main>{isNexvora ? <NexvoraCaseStudy /> : <EmsCaseStudy />}</main>
       ) : (
         <main>
           <Hero />

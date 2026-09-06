@@ -1,4 +1,4 @@
-import { ExternalLink } from 'lucide-react';
+import { ExternalLink, ArrowRight } from 'lucide-react';
 import { GithubIcon } from '../components/icons/BrandIcons';
 import NexvoraPreview from '../components/previews/NexvoraPreview';
 import CallFormPreview from '../components/previews/CallFormPreview';
@@ -33,6 +33,11 @@ function ProjectCard({ project, Preview }) {
             <a href={project.links.github} target="_blank" rel="noopener noreferrer"
               className="btn btn-outline btn-sm">
               <GithubIcon size={13} /> View Code
+            </a>
+          )}
+          {project.links.caseStudy && (
+            <a href={project.links.caseStudy} className="btn btn-ghost btn-sm">
+              Case study <ArrowRight size={13} />
             </a>
           )}
         </div>

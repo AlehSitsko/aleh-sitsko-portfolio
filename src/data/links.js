@@ -62,14 +62,15 @@ export const PROJECTS = [
     desc:  'Client project for Nexvora Group, a Pennsylvania-based wholesale & e-commerce company. A responsive multi-page React/Vite site (Home, About, MAP Policy, Contact) built around B2B, supplier-focused positioning — including a dedicated MAP & brand-protection page, per-page SEO and Open Graph metadata, a validated partnership contact form, and all editable content centralized in a single config file. Deployed on Vercel.',
     stack: ['React', 'Vite', 'JavaScript', 'CSS', 'SEO / OG', 'Vercel'],
     links: {
-      demo:   'https://nexvora-group.vercel.app/',
-      github: 'https://github.com/AlehSitsko/Nexvora_Group',
+      demo:      'https://nexvora-group.vercel.app/',
+      github:    'https://github.com/AlehSitsko/Nexvora_Group',
+      caseStudy: '#/nexvora',
     },
   },
   {
     id:    'calltaking',
     title: 'Call Taking Form — React Demo',
-    desc:  'Lightweight frontend EMS call intake prototype deployed via GitHub Pages. An early version of the workflow concepts later expanded into the full EMS Workflow System.',
+    desc:  'A browser-only (localStorage, no backend) EMS demo on GitHub Pages: a guided 3-step call-intake wizard with patient search and duplicate detection, plus patients, calls history, a dispatch preview, crew planner, and a price calculator. The frontend precursor to the full EMS Workflow System.',
     stack: ['React', 'Vite', 'JavaScript', 'Bootstrap', 'GitHub Pages', 'localStorage'],
     links: {
       demo:   'https://alehsitsko.github.io/Call-Taking-Form-React/',
