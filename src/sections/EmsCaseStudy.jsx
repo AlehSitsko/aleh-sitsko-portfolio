@@ -30,7 +30,7 @@ const REALTIME = [
 ];
 
 const QA = [
-  '1,400+ automated tests — backend pytest, frontend Vitest, and Playwright browser scenarios (roles, dispatch, realtime, responsive).',
+  '1,700+ automated tests — backend pytest, frontend Vitest, and Playwright browser scenarios (roles, dispatch, realtime, responsive).',
   'CI boots the entire production stack — PostgreSQL · Redis · Gunicorn×3 · Nginx · MinIO — and smoke-tests migrations, multi-worker realtime and an S3 document round-trip on every push.',
   'Adversarial security suite: cross-tenant access, org_id tampering, ciphertext relocation, key rotation and blind-index scoping all proven to fail closed.',
   'Alembic migrations run against real PostgreSQL in CI (not just SQLite), catching database-portability issues before deploy.',
