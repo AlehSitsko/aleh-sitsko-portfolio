@@ -76,9 +76,9 @@ export default function About() {
             </div>
 
             <p className="roles-desc">
-              I'm open to software development opportunities where I can contribute to practical
-              web applications, internal tools, workflow systems, QA automation, and
-              operations-focused software.
+              I contribute to practical web applications, internal tools, workflow systems,
+              QA automation, and operations-focused software — bringing an operations
+              background to the problems behind the code.
             </p>
 
             <div className="roles-list">

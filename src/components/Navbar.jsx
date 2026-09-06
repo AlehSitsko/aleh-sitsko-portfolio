@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react';
 import { Sun, Moon, Menu, X, Mail, Download } from 'lucide-react';
 import { GithubIcon, LinkedinIcon } from './icons/BrandIcons';
+import ShareButton from './ShareButton';
 import { LINKS } from '../data/links';
 import './Navbar.css';
 
@@ -65,6 +66,7 @@ export default function Navbar({ theme, toggleTheme }) {
             className="btn btn-ghost btn-sm icon-btn" aria-label="LinkedIn profile">
             <LinkedinIcon size={16} />
           </a>
+          <ShareButton className="btn btn-ghost btn-sm icon-btn" iconOnly size={16} />
           <a href={LINKS.email} className="btn btn-outline btn-sm">
             <Mail size={14} />
             Contact
@@ -105,6 +107,7 @@ export default function Navbar({ theme, toggleTheme }) {
               <a href={LINKS.email} className="btn btn-primary" onClick={close}>
                 <Mail size={15} /> Contact Me
               </a>
+              <ShareButton className="btn btn-outline" label="Share site" />
               <button className="btn btn-ghost theme-mobile-btn" onClick={toggleTheme}>
                 {theme === 'dark' ? <Sun size={15} /> : <Moon size={15} />}
                 {theme === 'dark' ? 'Light mode' : 'Dark mode'}

@@ -1,5 +1,6 @@
 import { Mail, Download, ExternalLink } from 'lucide-react';
 import { GithubIcon, LinkedinIcon } from '../components/icons/BrandIcons';
+import ShareButton from '../components/ShareButton';
 import { LINKS } from '../data/links';
 import './Contact.css';
 
@@ -43,6 +44,7 @@ export default function Contact() {
                 <ExternalLink size={15} />
                 View IBM Certificate
               </a>
+              <ShareButton className="btn btn-outline" label="Share" />
             </div>
 
             <p className="contact-refs">
