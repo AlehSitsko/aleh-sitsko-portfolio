@@ -57,6 +57,16 @@ export const PROJECTS = [
     disclaimer: 'Portfolio project. Not intended for production medical use and should not be used with real patient data.',
   },
   {
+    id:    'ial',
+    title: 'Infinite Auto Leasing PA',
+    desc:  'A server-rendered marketing & lead-generation website for a Philadelphia auto sales & leasing business. Nine pages (Find a Car, How It Works, Financing, Cars We’ve Delivered, Partnerships, About, Reviews, Contact), three validated inquiry forms backed by a server-side leads endpoint, local-business JSON-LD, per-page SEO/Open Graph, and sticky call/text CTAs. Built with Next.js and deployed on Cloudflare Workers.',
+    stack: ['Next.js 16', 'React 19', 'TypeScript', 'Tailwind', 'Cloudflare Workers', 'Vinext'],
+    links: {
+      demo:   'https://infinite-auto-leasing-pa.sitskoaleh.workers.dev',
+      github: 'https://github.com/AlehSitsko/infinite-auto-leasing-pa',
+    },
+  },
+  {
     id:    'nexvora',
     title: 'Nexvora Group Website',
     desc:  'Client project for Nexvora Group, a Pennsylvania-based wholesale & e-commerce company. A responsive multi-page React/Vite site (Home, About, MAP Policy, Contact) built around B2B, supplier-focused positioning — including a dedicated MAP & brand-protection page, per-page SEO and Open Graph metadata, a validated partnership contact form, and all editable content centralized in a single config file. Deployed on Vercel.',

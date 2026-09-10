@@ -1,10 +1,12 @@
 import { ExternalLink, ArrowRight } from 'lucide-react';
 import { GithubIcon } from '../components/icons/BrandIcons';
+import IALPreview from '../components/previews/IALPreview';
 import NexvoraPreview from '../components/previews/NexvoraPreview';
 import CallFormPreview from '../components/previews/CallFormPreview';
 import { PROJECTS } from '../data/links';
 import './Projects.css';
 
+const ial       = PROJECTS.find(p => p.id === 'ial');
 const nexvora   = PROJECTS.find(p => p.id === 'nexvora');
 const calltaking = PROJECTS.find(p => p.id === 'calltaking');
 
@@ -59,6 +61,7 @@ export default function Projects() {
         </div>
 
         <div className="projects-grid">
+          <ProjectCard project={ial}        Preview={IALPreview}      />
           <ProjectCard project={nexvora}    Preview={NexvoraPreview}  />
           <ProjectCard project={calltaking} Preview={CallFormPreview} />
         </div>
