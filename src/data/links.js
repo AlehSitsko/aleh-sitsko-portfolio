@@ -63,7 +63,7 @@ export const PROJECTS = [
     stack: ['Next.js 16', 'React 19', 'TypeScript', 'Tailwind', 'Cloudflare Workers', 'Vinext'],
     links: {
       demo:   'https://infinite-auto-leasing-pa.sitskoaleh.workers.dev',
-      github: null,
+      github: 'https://github.com/AlehSitsko/infinite-auto-leasing-pa',
     },
   },
   {
