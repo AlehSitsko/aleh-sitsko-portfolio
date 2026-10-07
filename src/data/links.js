@@ -57,6 +57,15 @@ export const PROJECTS = [
     disclaimer: 'Portfolio project. Not intended for production medical use and should not be used with real patient data.',
   },
   {
+    id:    'alena',
+    title: 'Alena’s Beauty Lab',
+    desc:  'A portfolio and booking website for a Philadelphia bridal & event makeup artist. Seven pages in a quiet editorial design, a swipeable reel of every photo and film in an accessible gallery dialog, and silent films that autoplay only while visible. Inquiries go through a Cloudflare Worker with Turnstile, rate limiting, honeypot and origin checks, shared client/server validation, and Cloudflare Email Sending. Static Astro build with per-page SEO, JSON-LD, and a branded link-preview card.',
+    stack: ['Astro', 'JavaScript', 'CSS', 'Cloudflare Workers', 'Turnstile', 'Email Sending'],
+    links: {
+      demo: 'https://alenasbeautylab.com',
+    },
+  },
+  {
     id:    'ial',
     title: 'Infinite Auto Leasing PA',
     desc:  'A server-rendered marketing & lead-generation website for a Philadelphia auto sales & leasing business. Nine pages (Find a Car, How It Works, Financing, Cars We’ve Delivered, Partnerships, About, Reviews, Contact), three validated inquiry forms backed by a server-side leads endpoint, local-business JSON-LD, per-page SEO/Open Graph, and sticky call/text CTAs. Built with Next.js and deployed on Cloudflare Workers.',
